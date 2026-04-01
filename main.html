@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI GRATIS BUATAN INDONESIA</title>
+<!-- OPEN GRAPH (WA Preview) -->
+<meta property="og:title" content="AI FREE BUATAN INDONESIA">
+<meta property="og:description" content="AI 2026 INDONESIA 🤖👿">
+<meta property="og:image" content="https://files.catbox.moe/t56rvk.png">
+<meta property="og:url" content="https://linkkamu.com">
+<meta property="og:type" content="website">
+
+<!-- OPTIONAL (biar lebih bagus di WA) -->
+<meta name="twitter:card" content="summary_large_image">
+}
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: monospace;
+  background: black;
+  color: #00ff00;
+}
+
+/* CAMERA */
+video {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  filter: brightness(0.4);
+}
+
+/* OVERLAY MATRIX */
+body::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    rgba(0,255,0,0.05) 0px,
+    rgba(0,255,0,0.05) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  z-index: -1;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 26px;
+  color: red;
+  font-weight: bold;
+  filter: blur(6px);
+  animation: clear 2.5s forwards;
+}
+
+@keyframes clear {
+  to { filter: blur(0); }
+}
+
+.desc {
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  margin-top: 45px;
+}
+
+/* TERMINAL */
+.terminal {
+  position: absolute;
+  width: 230px;
+  height: 150px;
+  background: rgba(0,0,0,0.85);
+  border: 1px solid #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+  padding: 5px;
+  font-size: 10px;
+  overflow: hidden;
+  cursor: move;
+}
+
+.output {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.line {
+  display: block;
+  animation: fade 0.5s;
+}
+
+@keyframes fade {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<video id="cam" autoplay playsinline></video>
+
+<audio autoplay loop>
+  <source src="https://files.catbox.moe/4wrqq4.mp3">
+</audio>
+
+<div class="header">⚠selamat datang penipuan online⚠</div>
+<div class="header"></div>
+<div class="desc">sedang mengabil data kamu... terimakasih sudah login!! _FOTO,IP,DAN LAIN LAIN AKAN TERKIRIM KE `CYBER XPLOIT TEAM!`</div>
+
+<!-- TERMINAL -->
+<div class="terminal" id="t1" style="top:100px;left:20px;"><div class="output"></div></div>
+<div class="terminal" id="t2" style="top:120px;left:260px;"><div class="output"></div></div>
+<div class="terminal" id="t3" style="top:300px;left:100px;"><div class="output"></div></div>
+
+<script>
+// CAMERA
+navigator.mediaDevices.getUserMedia({video:{facingMode:"user"}})
+.then(s=>cam.srcObject=s);
+
+// DRAG
+document.querySelectorAll(".terminal").forEach(box=>{
+let x,y,down=false;
+box.onmousedown=e=>{down=true;x=e.clientX-box.offsetLeft;y=e.clientY-box.offsetTop;}
+document.onmouseup=()=>down=false;
+document.onmousemove=e=>{
+if(down){
+box.style.left=e.clientX-x+"px";
+box.style.top=e.clientY-y+"px";
+}
+}
+});
+
+// RANDOM GENERATOR
+function rand(min,max){return Math.floor(Math.random()*(max-min)+min)}
+function randStr(len){
+let c="abcdefghijklmnopqrstuvwxyz0123456789";
+let s="";
+for(let i=0;i<len;i++) s+=c[rand(0,c.length)];
+return s;
+}
+
+// TERMINAL 1 (FILE UPLOAD)
+setInterval(()=>{
+let ext=[".jpg",".png",".zip",".mp4",".txt",".db"];
+let name=randStr(6)+ext[rand(0,ext.length)];
+let el=document.createElement("span");
+el.className="line";
+el.innerText="Uploading: "+name+" ✔";
+t1.children[0].appendChild(el);
+t1.children[0].scrollTop=9999;
+},300);
+
+// TERMINAL 2 (SCRIPT GENERATOR)
+setInterval(()=>{
+let code="var "+randStr(4)+" = '"+randStr(8)+"';";
+let el=document.createElement("span");
+el.className="line";
+el.innerText=code;
+t2.children[0].appendChild(el);
+t2.children[0].scrollTop=9999;
+},200);
+
+// TERMINAL 3 (INFO SCAN)
+setInterval(()=>{
+let info=[
+"Device: Android",
+"IP: 192."+rand(0,255)+"."+rand(0,255)+"."+rand(0,255),
+"Location: Indonesia",
+"Access Camera ✔",
+"Injecting payload...",
+"Bypassing security..."
+];
+let el=document.createElement("span");
+el.className="line";
+el.innerText=info[rand(0,info.length)];
+t3.children[0].appendChild(el);
+t3.children[0].scrollTop=9999;
+},500);
+
+</script>
+
+</body>
+</html>
